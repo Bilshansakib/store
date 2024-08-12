@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Avatar } from '@/components/ui/avatar';
+import Markdown from '@/components/Markdown';
 
 export default function ReviewSection({
   data,
@@ -41,8 +42,8 @@ export default function ReviewSection({
             </button>
           </div>
           <TabsContent value={tabName}>
-            <div className="prose mt-8 max-w-xl font-light">
-              <p>{data?.description}</p>
+            <div className="prose mt-8 max-w-3xl font-light">
+              <Markdown markdownText={data?.description} />
             </div>
           </TabsContent>
           <TabsContent value={tabName}>
