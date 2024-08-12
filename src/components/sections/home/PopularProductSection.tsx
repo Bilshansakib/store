@@ -5,7 +5,6 @@ import ProductCard from '@/components/cards/ProductCard';
 
 export default function PopularProductSection() {
   const { data, isLoading } = useGetTopProductsQuery('');
-
   return (
     <section className="container my-16">
       <div className="mx-auto flex items-end justify-between">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
+import { Avatar } from '@/components/ui/avatar';
 
 export default function ReviewSection({
   data,
@@ -14,6 +15,10 @@ export default function ReviewSection({
     originalPrice: number;
     price: number;
     description: string;
+    review: string;
+    Avator: string[];
+    AvatarImage: any;
+    name: string;
   };
 }) {
   const [tabName, setTabName] = React.useState('description');
@@ -40,7 +45,7 @@ export default function ReviewSection({
               <p>{data?.description}</p>
             </div>
           </TabsContent>
-          <TabsContent value="review">
+          <TabsContent value={tabName}>
             {/* <Card>
               <CardHeader>
                 <CardTitle>Password</CardTitle>
@@ -62,6 +67,35 @@ export default function ReviewSection({
                 <Button>Save password</Button>
               </CardFooter>
             </Card> */}
+          </TabsContent>
+        </Tabs>
+        <Tabs defaultValue="review">
+          <TabsContent value="review">
+            {/* <div className="prose mt-8 max-w-xl font-light">
+              <p>{data?.review}</p>
+             
+            </div> */}
+            <div className="flex flex-wrap gap-32 items-start">
+              <div className='flex max-w-sm gap-4 '>
+                <div>
+                <h4 data-v-14a43bd0="" className="font-semibold text-sm text-gray-900">Customer Reviews</h4>
+                </div>
+              </div>
+              <div>
+                <Avatar>Avatar</Avatar>
+                <div>
+                  <span className="font-semibold">hatlen</span>
+                  <span className="italic text-gray-400">
+                   
+                    – March 31, 2023
+                  </span>
+                </div>
+                <div className="prose-sm mt-4 italic text-gray-700">
+                  <p>Nice poster</p>
+                </div>
+              </div>
+              <p>--</p>
+            </div>
           </TabsContent>
         </Tabs>
       </div>
